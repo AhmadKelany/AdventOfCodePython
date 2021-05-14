@@ -12,8 +12,7 @@ def getSlack(box):
 
 def getRibbonArea(box):
     box.sort()
-    l = box[:2]
-    return 2 * l[0] + 2 * l[1] + box[0] * box[1] * box[2]
+    return 2 * box[0] + 2 * box[1] + box[0] * box[1] * box[2]
 
 def Part1():
     sum = 0
