@@ -12,4 +12,4 @@ def GetRequiredInt(i,zerosCount):
     
 
 print(f'Part 1 result = {GetRequiredInt(input,5)}')
-print(f'Part 1 result = {GetRequiredInt(input,6)}')
+print(f'Part 2 result = {GetRequiredInt(input,6)}')
