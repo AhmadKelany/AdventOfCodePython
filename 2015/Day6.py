@@ -1,10 +1,10 @@
-from typing import NamedTuple
+from collections import namedtuple
 
 
 with open('2015\day5input.txt') as f:
     lines = f.readlines()
 
-Instruction = NamedTuple('Instruction' , 'Command x1 y1 x2 y2')
+Instruction = namedtuple('Instruction' , 'command x1 y1 x2 y2')
 def Part1Rule(command,num):
     match command:
         case 'on':
