@@ -4,6 +4,7 @@ with open('2015\day6input.txt') as f:
 
 
 Instruction = namedtuple('Instruction' , 'command x1 y1 x2 y2')
+
 def Part1Rule(command,num):
     match command:
         case 'on':
@@ -11,7 +12,7 @@ def Part1Rule(command,num):
         case 'off':
             num = 0
         case 'toggle':
-            num = 0 if num == 1 else 1
+            num = 1 - num
     return num
 
 def Part2Rule(command,num):
@@ -57,7 +58,7 @@ def Part1():
     return GetSum(ApplyInstructions(GetAllInstructions() , Part1Rule))
 
 def Part2():
-    return GetSum( ApplyInstructions(GetAllInstructions() , Part2Rule))
+    return GetSum(ApplyInstructions(GetAllInstructions() , Part2Rule))
 
 
 
