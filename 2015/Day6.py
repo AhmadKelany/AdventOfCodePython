@@ -18,11 +18,11 @@ def Part1Rule(command,num):
 def Part2Rule(command,num):
     match command:
         case 'on':
-            num += 1
+            num = num + 1
         case 'off':
             num = 0 if num == 0 else num - 1
         case 'toggle':
-            num += 2
+            num = num + 2
     return num   
 
 def GetInstruction(s):
@@ -42,10 +42,11 @@ def GetAllInstructions():
 def ApplyInstructions(instructions,rule):
     rows, cols = (1000, 1000)
     matrix = [[0]*cols]*rows
+    print(GetSum(matrix))
     for i in instructions:
         for x in range(i.x1,i.x2+1):
             for y in range(i.y1,i.y2+1):
-                matrix[x][y] = rule(i.command,matrix[x][y])
+                matrix[x][y] = rule(i.command, matrix[x][y])
     return matrix
 
 def GetSum(matrix):
@@ -61,6 +62,11 @@ def Part2():
     return GetSum(ApplyInstructions(GetAllInstructions() , Part2Rule))
 
 
-
+def Test():
+    ins = [GetInstruction('turn on 2,5 through 9,12') , GetInstruction('turn off 6,7 through 9,12') , GetInstruction('toggle 2,5 through 9,12')]
+    ApplyInstructions(ins,Part1Rule)
+    
+print(Test())
 print(f'Part 1 = {Part1()}')
-print(f'Part 2 = {Part2()}')
+#print(f'Part 2 = {Part2()}')
+
