@@ -64,11 +64,7 @@ def Part2():
     return GetSum(ApplyInstructions(GetAllInstructions() , Part2Rule))
 
 
-def Test():
-    ins = [GetInstruction('turn on 2,5 through 9,12') , GetInstruction('turn off 6,7 through 9,12') , GetInstruction('toggle 2,5 through 9,12')]
-    ApplyInstructions(ins,Part1Rule)
-    
-print(Test())
+
 print(f'Part 1 = {Part1()}')
 print(f'Part 2 = {Part2()}')
 
