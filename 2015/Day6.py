@@ -1,3 +1,4 @@
+
 from collections import namedtuple
 with open('2015\day6input.txt') as f:
     lines = f.readlines()
@@ -40,9 +41,9 @@ def GetAllInstructions():
     return instructions
 
 def ApplyInstructions(instructions,rule):
-    rows, cols = (1000, 1000)
-    matrix = [[0]*cols]*rows
-    print(GetSum(matrix))
+    
+    matrix =  [[0 for x in range(1000)] for i in range(1000)]
+    
     for i in instructions:
         for x in range(i.x1,i.x2+1):
             for y in range(i.y1,i.y2+1):
@@ -55,6 +56,7 @@ def GetSum(matrix):
         for y in range(0,1000):
             sum += matrix[x][y] 
     return sum
+    
 def Part1():
     return GetSum(ApplyInstructions(GetAllInstructions() , Part1Rule))
 
@@ -68,5 +70,5 @@ def Test():
     
 print(Test())
 print(f'Part 1 = {Part1()}')
-#print(f'Part 2 = {Part2()}')
+print(f'Part 2 = {Part2()}')
 
